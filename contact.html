@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact - Jayram Phadtare</title>
+  <style>
+    :root{
+      --primary:#1a73e8;
+      --accent:#0f5ec9;
+      --card:#ffffff;
+      --bg:#f4f7fb;
+      --text:#222;
+      --muted:#666;
+      --radius:12px;
+    }
+    body{
+      margin:0;
+      font-family:Inter, Arial, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+    }
+    .container{
+      max-width:920px;
+      margin:40px auto;
+      padding:20px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:24px;
+    }
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:22px;
+      box-shadow:0 6px 18px rgba(20,30,60,0.08);
+    }
+    h1{margin:0 0 8px 0;font-size:24px}
+    p.lead{margin:0 0 18px 0;color:var(--muted)}
+    /* Contact info */
+    .contact-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px}
+    .contact-item{display:flex;gap:12px;align-items:center}
+    .dot{
+      width:44px;height:44px;border-radius:8px;
+      display:flex;align-items:center;justify-content:center;
+      background:linear-gradient(135deg,var(--primary),var(--accent));
+      color:white;font-weight:bold;
+      box-shadow:0 6px 14px rgba(26,115,232,0.18);
+    }
+    .contact-item div.info{display:flex;flex-direction:column}
+    .info .title{font-weight:600}
+    .info .sub{font-size:13px;color:var(--muted)}
+    .socials{display:flex;gap:8px;margin-top:8px}
+    .socials a{
+      display:inline-block;padding:8px 12px;border-radius:8px;text-decoration:none;background:#eef5ff;color:var(--primary);
+      font-weight:600;font-size:14px;
+    }
+
+    /* Form */
+    form {display:flex;flex-direction:column;gap:12px}
+    label{font-size:14px;font-weight:600}
+    input[type="text"], input[type="email"], textarea{
+      padding:12px 14px;border-radius:10px;border:1px solid #e1e6f0;font-size:15px;
+      outline:none;resize:vertical;
+    }
+    textarea{min-height:120px}
+    .row{display:flex;gap:12px}
+    .row .col{flex:1}
+
+    .btn{
+      display:inline-block;padding:12px 18px;border-radius:10px;background:linear-gradient(90deg,var(--primary),var(--accent));
+      color:white;border:0;font-weight:700;cursor:pointer;font-size:16px;
+      box-shadow:0 8px 20px rgba(15,94,201,0.18);
+    }
+    .btn.secondary{
+      background:transparent;color:var(--primary);border:2px solid var(--primary);
+    }
+
+    /* Responsive */
+    @media (max-width:860px){
+      .container{grid-template-columns:1fr;padding:16px}
+    }
+
+    /* small hint text */
+    .hint{font-size:13px;color:var(--muted;margin-top:6px)}
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- LEFT: Contact details -->
+    <div class="card">
+      <h1>Contact Me</h1>
+      <p class="lead">खाली माझे contact details आहेत — फोन, ईमेल आणि social links. तुम्ही message पाठवू शकता किंवा form वापरा.</p>
+
+      <ul class="contact-list">
+        <li class="contact-item">
+          <div class="dot">📞</div>
+          <div class="info">
+            <div class="title">Phone</div>
+            <div class="sub">+91 98XXXXXXXX</div>
+          </div>
+        </li>
+
+        <li class="contact-item">
+          <div class="dot">✉️</div>
+          <div class="info">
+            <div class="title">Email</div>
+            <div class="sub">jayram@example.com</div>
+          </div>
+        </li>
+
+        <li class="contact-item">
+          <div class="dot">📍</div>
+          <div class="info">
+            <div class="title">Location</div>
+            <div class="sub">Maharashtra, India</div>
+          </div>
+        </li>
+      </ul>
+
+      <div style="margin-top:18px">
+        <div class="hint">Quick links</div>
+        <div class="socials">
+          <a href="https://www.youtube.com/@jayramchannel" target="_blank">YouTube</a>
+          <a href="https://github.com/jayramp08" target="_blank">GitHub</a>
+          <a href="mailto:jayram@example.com">Email Me</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Contact form -->
+    <div class="card">
+      <h1>Send a Message</h1>
+      <p class="lead">खाली form भरून message पाठवा — हे mailto वापरून email client मध्ये draft तयार करेल.</p>
+
+      <form id="contactForm" onsubmit="return handleSubmit(event)">
+        <div class="row">
+          <div class="col">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="तुझे पूर्ण नाव" required>
+          </div>
+          <div class="col">
+            <label for="phone">Phone</label>
+            <input type="text" id="phone" name="phone" placeholder="+91 98XXXXXXXX" >
+          </div>
+        </div>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="example@mail.com" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="तुझं message लिहा..." required></textarea>
+
+        <div style="display:flex;gap:10px;margin-top:8px">
+          <button type="submit" class="btn">Send Message</button>
+          <button type="button" class="btn secondary" onclick="clearForm()">Clear</button>
+        </div>
+
+        <p id="status" style="color:var(--muted);font-size:14px;margin-top:10px"></p>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Replace these with your real contact details before publishing
+    const myEmail = "jayram@example.com"; // <-- change to your email
+
+    function handleSubmit(e){
+      e.preventDefault();
+      // read values
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      // simple validation
+      if(!name || !email || !message){
+        showStatus("कृपया आवश्यक फील्ड भरा (Name, Email, Message).", true);
+        return false;
+      }
+
+      // prepare mailto link (subject + body)
+      const subject = encodeURIComponent("Contact from website: " + name);
+      let bodyText = "Name: " + name + "%0D%0A";
+      if(phone) bodyText += "Phone: " + phone + "%0D%0A";
+      bodyText += "Email: " + email + "%0D%0A%0D%0A";
+      bodyText += "Message:%0D%0A" + encodeURIComponent(message);
+
+      const mailto = `mailto:${myEmail}?subject=${subject}&body=${bodyText}`;
+
+      // Try opening mail client
+      window.location.href = mailto;
+
+      // show friendly message (in case mail client doesn't open)
+      showStatus("तुमचा ईमेल draft open करण्याचा प्रयत्न केला... जर email client उघडला नसेल तर कृपया तुमचा email client configure करा.", false);
+
+      return false;
+    }
+
+    function showStatus(text, isError){
+      const s = document.getElementById("status");
+      s.style.color = isError ? "#c0392b" : "#333";
+      s.textContent = text;
+    }
+
+    function clearForm(){
+      document.getElementById("contactForm").reset();
+      showStatus("", false);
+    }
+  </script>
+</body>
+</html>
