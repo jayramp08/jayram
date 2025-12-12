@@ -1,213 +1,187 @@
 <!DOCTYPE html>
-<html lang="mr">
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Contact - Jayram Phadtare</title>
-  <style>
-    :root{
-      --primary:#1a73e8;
-      --accent:#0f5ec9;
-      --card:#ffffff;
-      --bg:#f4f7fb;
-      --text:#222;
-      --muted:#666;
-      --radius:12px;
-    }
-    body{
-      margin:0;
-      font-family:Inter, Arial, sans-serif;
-      background:var(--bg);
-      color:var(--text);
-      -webkit-font-smoothing:antialiased;
-    }
-    .container{
-      max-width:920px;
-      margin:40px auto;
-      padding:20px;
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:24px;
-    }
-    .card{
-      background:var(--card);
-      border-radius:var(--radius);
-      padding:22px;
-      box-shadow:0 6px 18px rgba(20,30,60,0.08);
-    }
-    h1{margin:0 0 8px 0;font-size:24px}
-    p.lead{margin:0 0 18px 0;color:var(--muted)}
-    /* Contact info */
-    .contact-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px}
-    .contact-item{display:flex;gap:12px;align-items:center}
-    .dot{
-      width:44px;height:44px;border-radius:8px;
-      display:flex;align-items:center;justify-content:center;
-      background:linear-gradient(135deg,var(--primary),var(--accent));
-      color:white;font-weight:bold;
-      box-shadow:0 6px 14px rgba(26,115,232,0.18);
-    }
-    .contact-item div.info{display:flex;flex-direction:column}
-    .info .title{font-weight:600}
-    .info .sub{font-size:13px;color:var(--muted)}
-    .socials{display:flex;gap:8px;margin-top:8px}
-    .socials a{
-      display:inline-block;padding:8px 12px;border-radius:8px;text-decoration:none;background:#eef5ff;color:var(--primary);
-      font-weight:600;font-size:14px;
-    }
+<meta charset="UTF-8">
+<title>My Info</title>
 
-    /* Form */
-    form {display:flex;flex-direction:column;gap:12px}
-    label{font-size:14px;font-weight:600}
-    input[type="text"], input[type="email"], textarea{
-      padding:12px 14px;border-radius:10px;border:1px solid #e1e6f0;font-size:15px;
-      outline:none;resize:vertical;
-    }
-    textarea{min-height:120px}
-    .row{display:flex;gap:12px}
-    .row .col{flex:1}
+<style>
+/* GOOGLE FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Kaushan+Script&display=swap');
 
-    .btn{
-      display:inline-block;padding:12px 18px;border-radius:10px;background:linear-gradient(90deg,var(--primary),var(--accent));
-      color:white;border:0;font-weight:700;cursor:pointer;font-size:16px;
-      box-shadow:0 8px 20px rgba(15,94,201,0.18);
-    }
-    .btn.secondary{
-      background:transparent;color:var(--primary);border:2px solid var(--primary);
-    }
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(120deg, #ff00ff, #00eaff, #00ff6a, #ffef00, #ff0080);
+    background-size: 500% 500%;
+    animation: bgMove 10s infinite alternate;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    flex-direction: column;
+    gap: 30px;
+}
 
-    /* Responsive */
-    @media (max-width:860px){
-      .container{grid-template-columns:1fr;padding:16px}
-    }
+/* MOVING RAINBOW BACKGROUND */
+@keyframes bgMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
 
-    /* small hint text */
-    .hint{font-size:13px;color:var(--muted;margin-top:6px)}
-  </style>
+/* MAIN BOX */
+.box {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 35px 55px;
+    border-radius: 30px;
+    border: 4px solid transparent;
+    animation: neonBorder 3s infinite alternate;
+    text-align: center;
+    transform-style: preserve-3d;
+    animation: boxMove 5s infinite ease-in-out;
+    width: 380px;
+}
+
+/* 3D FLOATING EFFECT */
+@keyframes boxMove {
+    0% { transform: rotateY(0deg) rotateX(0deg); }
+    50% { transform: rotateY(10deg) rotateX(7deg); }
+    100% { transform: rotateY(0deg) rotateX(0deg); }
+}
+
+/* NEON BORDER */
+@keyframes neonBorder {
+    0% { border-color: #ff00ff; box-shadow: 0 0 25px #ff00ff; }
+    50% { border-color: #00eaff; box-shadow: 0 0 35px #00eaff; }
+    100% { border-color: #00ff6a; box-shadow: 0 0 40px #00ff6a; }
+}
+
+/* TYPING EFFECT */
+.typing {
+    color: #ffffff;
+    font-size: 45px;
+    margin-bottom: 20px;
+    font-family: 'Kaushan Script', cursive;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 4px solid white;
+    animation: cursorBlink 0.7s infinite;
+}
+
+@keyframes cursorBlink {
+    0%, 100% { border-color: white; }
+    50% { border-color: transparent; }
+}
+
+/* INFO TEXT */
+.info p, .connect p {
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+    margin: 10px 0;
+    text-shadow: 0 0 10px #00eaff;
+    letter-spacing: 1px;
+}
+
+/* SOCIAL LINKS */
+.social a {
+    display: inline-block;
+    margin: 8px;
+    padding: 10px 20px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    font-family: 'Montserrat';
+    font-size: 16px;
+    transition: 0.3s;
+    border: 1px solid #fff;
+    box-shadow: 0 0 10px #00eaff;
+}
+
+.social a:hover {
+    transform: scale(1.15);
+    background: #00eaff;
+    color: black;
+    box-shadow: 0 0 20px #00eaff;
+}
+
+/* FLOATING PARTICLES */
+.circle {
+    position: absolute;
+    background: rgba(255,255,255,0.8);
+    border-radius: 50%;
+    animation: float 8s infinite ease-in-out;
+}
+
+@keyframes float {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-900px) scale(1.8); opacity: 0; }
+}
+</style>
 </head>
+
 <body>
 
-  <div class="container">
-    <!-- LEFT: Contact details -->
-    <div class="card">
-      <h1>Contact Me</h1>
-      <p class="lead">खाली माझे contact details आहेत — फोन, ईमेल आणि social links. तुम्ही message पाठवू शकता किंवा form वापरा.</p>
+<!-- BOX 1: MY INFO -->
+<div class="box">
+    <div class="typing" id="typeText1"></div>
 
-      <ul class="contact-list">
-        <li class="contact-item">
-          <div class="dot">📞</div>
-          <div class="info">
-            <div class="title">Phone</div>
-            <div class="sub">+91 98XXXXXXXX</div>
-          </div>
-        </li>
-
-        <li class="contact-item">
-          <div class="dot">✉️</div>
-          <div class="info">
-            <div class="title">Email</div>
-            <div class="sub">jayram@example.com</div>
-          </div>
-        </li>
-
-        <li class="contact-item">
-          <div class="dot">📍</div>
-          <div class="info">
-            <div class="title">Location</div>
-            <div class="sub">Maharashtra, India</div>
-          </div>
-        </li>
-      </ul>
-
-      <div style="margin-top:18px">
-        <div class="hint">Quick links</div>
-        <div class="socials">
-          <a href="https://www.youtube.com/@jayramchannel" target="_blank">YouTube</a>
-          <a href="https://github.com/jayramp08" target="_blank">GitHub</a>
-          <a href="mailto:jayram@example.com">Email Me</a>
-        </div>
-      </div>
+    <div class="info">
+        <p>Name: <b>Jayram Phadtare</b></p>
+        <p>Class: <b>12th Science (PCM)</b></p>
+        <p>Website Developer & Programmer</p>
+        <p>Future Projects: Coming Soon...</p>
     </div>
+</div>
 
-    <!-- RIGHT: Contact form -->
-    <div class="card">
-      <h1>Send a Message</h1>
-      <p class="lead">खाली form भरून message पाठवा — हे mailto वापरून email client मध्ये draft तयार करेल.</p>
+<!-- BOX 2: CONNECT WITH ME -->
+<div class="box">
+    <div class="typing" id="typeText2"></div>
 
-      <form id="contactForm" onsubmit="return handleSubmit(event)">
-        <div class="row">
-          <div class="col">
-            <label for="name">Full Name</label>
-            <input type="text" id="name" name="name" placeholder="तुझे पूर्ण नाव" required>
-          </div>
-          <div class="col">
-            <label for="phone">Phone</label>
-            <input type="text" id="phone" name="phone" placeholder="+91 98XXXXXXXX" >
-          </div>
+    <div class="connect">
+        <p>Let’s stay connected!</p>
+
+        <div class="social">
+            <a href="#">Instagram</a>
+            <a href="#">YouTube</a>
+            <a href="#">GitHub</a>
+            <a href="#">Email</a>
         </div>
-
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="example@mail.com" required>
-
-        <label for="message">Message</label>
-        <textarea id="message" name="message" placeholder="तुझं message लिहा..." required></textarea>
-
-        <div style="display:flex;gap:10px;margin-top:8px">
-          <button type="submit" class="btn">Send Message</button>
-          <button type="button" class="btn secondary" onclick="clearForm()">Clear</button>
-        </div>
-
-        <p id="status" style="color:var(--muted);font-size:14px;margin-top:10px"></p>
-      </form>
     </div>
-  </div>
+</div>
 
-  <script>
-    // Replace these with your real contact details before publishing
-    const myEmail = "jayram@example.com"; // <-- change to your email
+<!-- PARTICLE SCRIPT -->
+<script>
+for (let i = 0; i < 40; i++) {
+    let c = document.createElement("div");
+    c.classList.add("circle");
+    let size = Math.random() * 40 + 10;
+    c.style.width = size + "px";
+    c.style.height = size + "px";
+    c.style.left = Math.random() * window.innerWidth + "px";
+    c.style.bottom = Math.random() * 50 + "px";
+    c.style.animationDuration = (4 + Math.random() * 6) + "s";
+    c.style.animationDelay = Math.random() * 5 + "s";
+    document.body.appendChild(c);
+}
 
-    function handleSubmit(e){
-      e.preventDefault();
-      // read values
-      const name = document.getElementById("name").value.trim();
-      const phone = document.getElementById("phone").value.trim();
-      const email = document.getElementById("email").value.trim();
-      const message = document.getElementById("message").value.trim();
-
-      // simple validation
-      if(!name || !email || !message){
-        showStatus("कृपया आवश्यक फील्ड भरा (Name, Email, Message).", true);
-        return false;
-      }
-
-      // prepare mailto link (subject + body)
-      const subject = encodeURIComponent("Contact from website: " + name);
-      let bodyText = "Name: " + name + "%0D%0A";
-      if(phone) bodyText += "Phone: " + phone + "%0D%0A";
-      bodyText += "Email: " + email + "%0D%0A%0D%0A";
-      bodyText += "Message:%0D%0A" + encodeURIComponent(message);
-
-      const mailto = `mailto:${myEmail}?subject=${subject}&body=${bodyText}`;
-
-      // Try opening mail client
-      window.location.href = mailto;
-
-      // show friendly message (in case mail client doesn't open)
-      showStatus("तुमचा ईमेल draft open करण्याचा प्रयत्न केला... जर email client उघडला नसेल तर कृपया तुमचा email client configure करा.", false);
-
-      return false;
+/* TYPING EFFECTS */
+function typeEffect(id, text) {
+    let i = 0;
+    function type() {
+        if (i < text.length) {
+            document.getElementById(id).innerHTML += text.charAt(i);
+            i++;
+            setTimeout(type, 120);
+        }
     }
+    type();
+}
 
-    function showStatus(text, isError){
-      const s = document.getElementById("status");
-      s.style.color = isError ? "#c0392b" : "#333";
-      s.textContent = text;
-    }
+typeEffect("typeText1", "My Information");
+typeEffect("typeText2", "Connect With Me");
+</script>
 
-    function clearForm(){
-      document.getElementById("contactForm").reset();
-      showStatus("", false);
-    }
-  </script>
 </body>
-</html>
+  </html>
