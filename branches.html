@@ -1,177 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Choose Your Engineering Branch</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engineering Branches | Jayram Phadtare</title>
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, sans-serif;
-}
-
-body{
-    background:#f4f7fc;
-    padding:20px;
-}
-
-header{
-    text-align:center;
-    margin-bottom:35px;
-}
-
-header h1{
-    color:#0f172a;
-    margin-bottom:10px;
-}
-
-header p{
-    color:#555;
-    max-width:700px;
-    margin:auto;
-}
-
-.branch-container{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:20px;
-}
-
-.branch-card{
-    background:#fff;
-    padding:25px;
-    border-radius:16px;
-    box-shadow:0 4px 12px rgba(0,0,0,0.08);
-    transition:0.3s;
-}
-
-.branch-card:hover{
-    transform:translateY(-5px);
-}
-
-.branch-card h2{
-    color:#2563eb;
-    margin-bottom:10px;
-}
-
-.branch-card p{
-    color:#555;
-    margin-bottom:15px;
-    line-height:1.5;
-}
-
-.branch-card a{
-    text-decoration:none;
-    background:#2563eb;
-    color:white;
-    padding:10px 16px;
-    border-radius:8px;
-    display:inline-block;
-    font-weight:bold;
-}
-
-.branch-card a:hover{
-    background:#1d4ed8;
-}
-
-footer{
-    text-align:center;
-    margin-top:40px;
-    color:#666;
-}
-</style>
-
-<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-
+    <!-- Header -->
     <header>
-        <nav>
-            <div class="logo">JAYRAM PHADTARE</div>
-<ul>
-<nav>
-    <a href="index.html">Home</a>
-    <a href="branches.html">Branches</a>
-    <a href="contact.html">Contact</a>
-</nav>
-</ul>
+        <nav class="navbar">
+
+            <div class="logo">
+                JAYRAM PHADTARE
+            </div>
+
+            <div style="display:flex;align-items:center;gap:15px;">
+
+                <button onclick="toggleDarkMode()" class="dark-btn">
+                    🌙
+                </button>
+
+                <div class="menu-btn" onclick="toggleMenu()">
+                    ☰
+                </div>
+
+            </div>
+
+            <ul class="nav-links" id="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="branches.html">Branches</a></li>
+                <li><a href="index.html#colleges">Colleges</a></li>
+                <li><a href="index.html#gallery">Gallery</a></li>
+                <li><a href="index.html#achievements">Achievements</a></li>
+                <li><a href="index.html#future">Future Plans</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
 
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home">
+    <!-- Page Header -->
+    <section class="hero">
 
-        <img src="profile.jpg" alt="Jayram Profile Photo" width="200">
-  
-<header>
-    <h1>🎓 Choose Your Engineering Branch</h1>
-    <p>
-        Explore subjects, career opportunities, future scope,
-        salary insights, and top colleges for each engineering branch.
-    </p>
-</header>
+        <h1>🎓 Engineering Branches</h1>
 
-<div class="branch-container">
+        <p>
+            Explore different engineering branches,
+            subjects, career opportunities,
+            future scope, salaries and top colleges.
+        </p>
 
-    <div class="branch-card">
-        <h2>💻 Computer Engineering</h2>
-        <p>Programming, software development, AI, databases and computer systems.</p>
-        <a href="computer.html">Explore</a>
-    </div>
+    </section>
 
-    <div class="branch-card">
-        <h2>📊 Information Technology</h2>
-        <p>Software systems, networking, cloud computing and databases.</p>
-        <a href="it.html">Explore</a>
-    </div>
+    <!-- Branches -->
+    <section class="section">
 
-    <div class="branch-card">
-        <h2>🤖 AI & Data Science</h2>
-        <p>Artificial Intelligence, Data Analytics, Machine Learning and Big Data.</p>
-        <a href="aids.html">Explore</a>
-    </div>
+        <div class="grid">
 
-    <div class="branch-card">
-        <h2>🧠 AI & Machine Learning</h2>
-        <p>Deep Learning, Machine Learning, Neural Networks and AI applications.</p>
-        <a href="aiml.html">Explore</a>
-    </div>
+            <div class="card">
+                <h3>💻 Computer Engineering</h3>
+                <p>
+                    Programming, Software Development,
+                    Databases, AI and Networking.
+                </p>
 
-    <div class="branch-card">
-        <h2>📡 Electronics & Telecommunication</h2>
-        <p>Communication systems, electronics, embedded systems and IoT.</p>
-        <a href="entc.html">Explore</a>
-    </div>
+                <a href="computer.html" class="btn">
+                    Explore
+                </a>
+            </div>
 
-    <div class="branch-card">
-        <h2>⚙️ Mechanical Engineering</h2>
-        <p>Machines, automobiles, manufacturing and industrial design.</p>
-        <a href="mechanical.html">Explore</a>
-    </div>
+            <div class="card">
+                <h3>📊 Information Technology</h3>
+                <p>
+                    Software Systems,
+                    Cloud Computing,
+                    Networking and Databases.
+                </p>
 
-    <div class="branch-card">
-        <h2>🏗️ Civil Engineering</h2>
-        <p>Buildings, roads, bridges and infrastructure development.</p>
-        <a href="civil.html">Explore</a>
-    </div>
+                <a href="it.html" class="btn">
+                    Explore
+                </a>
+            </div>
 
-    <div class="branch-card">
-        <h2>⚡ Electrical Engineering</h2>
-        <p>Power systems, renewable energy and electrical machines.</p>
-        <a href="electrical.html">Explore</a>
-    </div>
+            <div class="card">
+                <h3>🤖 AI & Data Science</h3>
+                <p>
+                    Artificial Intelligence,
+                    Machine Learning,
+                    Analytics and Big Data.
+                </p>
 
-</div>
+                <a href="aids.html" class="btn">
+                    Explore
+                </a>
+            </div>
 
-<footer>
-    <p>Made for Engineering Aspirants 🚀</p>
-</footer>
+            <div class="card">
+                <h3>🧠 AI & Machine Learning</h3>
+                <p>
+                    Deep Learning,
+                    Neural Networks,
+                    AI Systems and Automation.
+                </p>
+
+                <a href="aiml.html" class="btn">
+                    Explore
+                </a>
+            </div>
+
+            <div class="card">
+                <h3>📡 Electronics & Telecommunication</h3>
+                <p>
+                    Communication Systems,
+                    Embedded Systems,
+                    Electronics and IoT.
+                </p>
+
+                <a href="entc.html" class="btn">
+                    Explore
+                </a>
+            </div>
+
+            <div class="card">
+                <h3>⚙️ Mechanical Engineering</h3>
+                <p>
+                    Machines,
+                    Manufacturing,
+                    Robotics and Design.
+                </p>
+
+                <a href="mechanical.html" class="btn">
+                    Explore
+                </a>
+            </div>
+
+            <div class="card">
+                <h3>🏗️ Civil Engineering</h3>
+                <p>
+                    Infrastructure,
+                    Buildings,
+                    Roads and Construction.
+                </p>
+
+                <a href="civil.html" class="btn">
+                    Explore
+                </a>
+            </div>
+
+            <div class="card">
+                <h3>⚡ Electrical Engineering</h3>
+                <p>
+                    Power Systems,
+                    Renewable Energy,
+                    Electrical Machines.
+                </p>
+
+                <a href="electrical.html" class="btn">
+                    Explore
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Coming Soon -->
+    <section class="section">
+
+        <h2 class="section-title">
+            🚀 More Branches Coming Soon
+        </h2>
+
+        <div class="grid">
+
+            <div class="card">
+                <h3>🤖 Robotics & Automation</h3>
+            </div>
+
+            <div class="card">
+                <h3>🧪 Chemical Engineering</h3>
+            </div>
+
+            <div class="card">
+                <h3>🔬 Instrumentation Engineering</h3>
+            </div>
+
+            <div class="card">
+                <h3>🧬 Biotechnology</h3>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            © 2026 Jayram Phadtare |
+            Engineering Guidance Platform 🚀
+        </p>
+
+    </footer>
+
+    <script src="script.js"></script>
 
 </body>
-</html
+</html>
